@@ -1,22 +1,11 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
 import dotenv from 'dotenv'
-import bcrypt from 'bcrypt'
+import connectDB from './config/db.js'
+import app from "./app.js"
 
 dotenv.config();
 
-const app = express();
-
-// middleware
-app.use(cors());
-app.use(express.json());
-
-
-// test
-app.get('/', (req, res) => {
-    res.send("API is running");
-});
+//database
+connectDB()
 
 
 //server
